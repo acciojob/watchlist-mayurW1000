@@ -18,7 +18,11 @@ public class MovieRepository {
     }
 
     public Movie get_Movie(String name){
-        return storeMovie.get(name);
+        if(storeMovie.containsKey(name)){
+        return storeMovie.get(name);}
+        else{
+            return null;
+        }
     }
 
     public void add_Director(Director director){
@@ -26,7 +30,11 @@ public class MovieRepository {
     }
 
     public Director get_Director(String name){
-        return storeDirector.get(name);
+        if(storeDirector.containsKey(name)){
+        return storeDirector.get(name);}
+        else{
+            return null;
+        }
     }
 
     public void add_pair(String movie_name, String director_name){
@@ -41,10 +49,10 @@ public class MovieRepository {
     }
     }
 
-    public List<Movie> get_all_movies(){
-        List<Movie>list=new ArrayList<>();
+    public List<String> get_all_movies(){
+        List<String>list=new ArrayList<>();
         for(String name:storeMovie.keySet()){
-            list.add(storeMovie.get(name));
+            list.add(name);
         }
         return list;
     }

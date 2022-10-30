@@ -28,7 +28,7 @@ public class MovieService {
         return movieRepository.get_Director(name);
     }
 
-    public List<Movie> get_all_movies(){
+    public List<String> get_all_movies(){
         return movieRepository.get_all_movies();
     }
     public void add_pair(String movie_name, String director_name){
